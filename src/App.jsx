@@ -6,12 +6,9 @@ import Home from './components/Home';
 
 const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <Header />
-        <Navbar />
+    <div>
+      <header >
         <Home/>
-        <Footer />
       </header>
     </div>
   );
