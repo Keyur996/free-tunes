@@ -1,6 +1,6 @@
 import React from "react"
 import Song from "./Song";
-let _playlistArr = [
+let _songsArray = [
     {
         name: 'Maharshi Favorite Song',
     },
@@ -11,10 +11,10 @@ let _playlistArr = [
         name: 'Abhi Favorite Song',
     }
 ]
-const Playlist = ({ playlistArr = _playlistArr }) => {
+const Playlist = ({ songsArray = _songsArray }) => {
     return (
         <div>
-            {(playlistArr || []).map((_song) => (<Song key={_song.name} song={_song} />))}
+            {(songsArray || []).map((_song) => (<Song key={_song.name} song={_song} />))}
         </div>
     )
 }
