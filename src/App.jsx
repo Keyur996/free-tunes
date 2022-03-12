@@ -1,15 +1,12 @@
 import './App.css';
+import Routing from './shared/Routing';
 import Navbar from './shared/Navbar';
-import Header from './shared/Header';
-import Footer from './shared/Footer';
-import Home from './components/Home';
 
 const App = () => {
   return (
-    <div>
-      <header >
-        <Home/>
-      </header>
+    <div className="flex">
+        <Navbar />
+        <Routing />
     </div>
   );
 }
