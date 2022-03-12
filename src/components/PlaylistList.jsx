@@ -44,7 +44,15 @@ let _playlistArr = [
 const PlaylistList = ({ playlistArr = _playlistArr }) => {
     return (
         <div>
-            {(playlistArr || []).map((playlist) => (<Playlist key={playlist.name} song={playlist.songs} />))}
+            {playlistArr.map((playlist, index) => {
+                console.log('--------- Inside PlayList', index, playlist);
+                return (
+                    <span key={index}>
+                        <div>PlayList Name: {playlist.name}</div>
+                        <Playlist  songs={playlist.songs} />
+                    </span>
+                )
+            })}
         </div>
     )
 }

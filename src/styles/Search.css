@@ -1,0 +1,9 @@
+.__search-div {
+    width: 70%;
+    margin: 0 10% auto auto;
+    padding: 20px;
+}
+.__search-input {
+    width: 100%;
+    align-self: center;
+}
