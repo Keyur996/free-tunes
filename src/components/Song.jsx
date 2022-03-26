@@ -1,9 +1,10 @@
 import React from "react"
+import Card from "../shared/Card"
 
 const Song = ({ song }) => {
     return (
         <div>
-            Name: { song.name }
+            <Card key={song.title} model={song} />
         </div>
     )
 }
