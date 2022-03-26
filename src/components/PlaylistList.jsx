@@ -1,17 +1,38 @@
 import React from "react"
 import Playlist from "./Playlist";
+import Search from "../shared/Search";
+import { Link } from "react-router-dom";
+import "../styles/PlaylistList.css"
 let _playlistArr = [
     {
         name: 'Maharshi Favorite Playlist',
         songs : [
             {
-                name: ' "Aaj Se Teri" Padman',
+                title: ' "Aaj Se Teri" Padman',
             },
             {
-                name: '"Tere Mere" Chef',
+                title: '"Tere Mere" Chef',
             },
             {
-                name: '"Main Tere Kabil Hoon" Kaabil',
+                title: '"Main Tere Kabil Hoon" Kaabil',
+            },
+            {
+                title: ' "Aaj Se Teri" Padman1',
+            },
+            {
+                title: '"Tere Mere" Chef1',
+            },
+            {
+                title: '"Main Tere Kabil Hoon" Kaabil1',
+            },
+            {
+                title: '"Enna Sona" OK Jaanu',
+            },
+            {
+                title: '"Humsafar" Badrinath Ki Dulhania'
+            },
+            {
+                title: '"Lambiyaan Si Judaiyan" Raabta',
             }
         ]
     },
@@ -19,13 +40,13 @@ let _playlistArr = [
         name: 'Keyur Favorite Playlist',
         songs : [
             {
-                name: '"Enna Sona" OK Jaanu',
+                title: '"Enna Sona" OK Jaanu',
             },
             {
-                name: '"Humsafar" Badrinath Ki Dulhania'
+                title: '"Humsafar" Badrinath Ki Dulhania'
             },
             {
-                name: '"Lambiyaan Si Judaiyan" Raabta',
+                title: '"Lambiyaan Si Judaiyan" Raabta',
             }
         ]
     },
@@ -33,10 +54,10 @@ let _playlistArr = [
         name: 'Abhi Favorite Playlist',
         songs : [
             {
-                name: '"Ban Ja Rani" Tumhari Sulu',
+                title: '"Ban Ja Rani" Tumhari Sulu',
             },
             {
-                name: '"Nazm Nazm" Bareilly Ki Barfi',
+                title: '"Nazm Nazm" Bareilly Ki Barfi',
             }
         ]
     }
@@ -44,15 +65,21 @@ let _playlistArr = [
 const PlaylistList = ({ playlistArr = _playlistArr }) => {
     return (
         <div>
-            {playlistArr.map((playlist, index) => {
-                console.log('--------- Inside PlayList', index, playlist);
-                return (
-                    <span key={index}>
-                        <div>PlayList Name: {playlist.name}</div>
-                        <Playlist  songs={playlist.songs} />
-                    </span>
-                )
-            })}
+            <>
+                <Search searchIn={'playlist'} />
+            </>
+            <div >
+                {playlistArr.map((playlist, index) => {
+                    console.log('--------- Inside PlayList', index, playlist);
+                    return (
+                        <span className="scrollable grid-rows-4 grid-flow-col gap-4" key={index}>
+                            <div>PlayList Name: {playlist.name}</div>
+                            <Playlist  songs={playlist.songs} />
+                            <Link to={playlist.name}>{playlist.name}</Link>
+                        </span>
+                    )
+                })}
+            </div>
         </div>
     )
 }

@@ -3,12 +3,14 @@ import Home from "../components/Home";
 import Album from "../components/Album";
 import Genre from "../components/Genre";
 import PlaylistList from "../components/PlaylistList";
+import Playlist from "../components/Playlist";
 
 const routeArr = [
     { path: "/", element: <Home /> },
     { path: "playlistlist", element: <PlaylistList /> },
     { path: "album", element: <Album />},
     { path: "genre", element: <Genre /> },
+    { path: "playlist", element: <Playlist /> },
 ]
 
 const Routing = () => {
